@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "heuristpy"
+version = "0.1.0"
+description = "Python client for Heurist databases"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+dependencies = ["requests>=2.28"]
+
+[project.optional-dependencies]
+spatial = ["geopandas>=0.12", "shapely>=2.0"]
+dev = ["pytest>=7.0", "pytest-cov", "responses>=0.23"]
+
+[project.urls]
+Homepage = "https://github.com/Center-for-Archaeology-and-Society/heuristpy"
+Repository = "https://github.com/Center-for-Archaeology-and-Society/heuristpy"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["heuristpy*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
